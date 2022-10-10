@@ -1,4 +1,4 @@
-package fr.lernejo.guessname;
+package fr.lernejo.guessgame;
 
 import fr.lernejo.logger.Logger;
 import fr.lernejo.logger.LoggerFactory;

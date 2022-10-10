@@ -1,8 +1,8 @@
-package fr.lernejo;
+package fr.lernejo.guessgame;
 
-import fr.lernejo.guessname.ComputerPlayer;
-import fr.lernejo.guessname.HumanPlayer;
-import fr.lernejo.guessname.Player;
+import fr.lernejo.Simulation;
+import fr.lernejo.guessgame.ComputerPlayer;
+import fr.lernejo.guessgame.HumanPlayer;
 
 import java.security.SecureRandom;
 

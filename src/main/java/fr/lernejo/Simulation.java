@@ -1,13 +1,11 @@
 package fr.lernejo;
 
-import fr.lernejo.guessname.HumanPlayer;
-import fr.lernejo.guessname.Player;
+import fr.lernejo.guessgame.Player;
 import fr.lernejo.logger.Logger;
 import fr.lernejo.logger.LoggerFactory;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
 public class Simulation {
 
