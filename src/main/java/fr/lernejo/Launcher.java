@@ -28,7 +28,7 @@ public class Launcher {
                     simu.loopUntilPlayerSucceed(1000);
                 }catch (NumberFormatException e){
                     System.out.println(e.getMessage());
-                    System.out.println("Veuillez entrer un nombre");
+                    System.out.println("Veuillez entrer un nombre valide");
                 }
             }
         }

@@ -3,7 +3,8 @@ package fr.lernejo.logger;
 public class LoggerFactory {
 
     public static Logger getLogger(String name) {
-        ConsoleLogger consoleLogger = new ConsoleLogger();
-        return consoleLogger;
+        FileLogger logger = new FileLogger("logging.txt");
+        Logger contextualLogger = new ContextualLogger(name, logger);
+        return contextualLogger;
     }
 }
