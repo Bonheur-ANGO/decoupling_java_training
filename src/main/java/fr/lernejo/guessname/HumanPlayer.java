@@ -12,6 +12,7 @@ public class HumanPlayer implements Player {
 
     @Override
     public long askNextGuess() {
+        logger.log("Entrez un nombre entre 1 et 100");
         Scanner input = new Scanner(System.in);
         Long userNumberInput = input.nextLong();
         return userNumberInput;

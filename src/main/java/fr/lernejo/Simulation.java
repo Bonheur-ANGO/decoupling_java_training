@@ -30,12 +30,10 @@ public class Simulation {
      */
     private boolean nextRound() {
         //TODO implement me
-        System.out.println("Entrez un nombre entre 1 et 100");
         long userNumberInput = player.askNextGuess();
-        System.out.println(userNumberInput);
+        logger.log(Long.toString(userNumberInput));
 
         if (userNumberInput == numberToGuess){
-            logger.log("Bravo");
             return true;
         }else{
             player.respond(userNumberInput > this.numberToGuess);
@@ -60,11 +58,17 @@ public class Simulation {
         String time = simpleDate.format(date);
 
         if (success == true && i < loopNumber){
-            System.out.println("Bravo vous avez trouve le nombre avant la limite d'iterations en " + time + "ms");
+            //System.out.println("Bravo vous avez trouve le nombre avant la limite d'iterations en " + time + "ms");
+            logger.log("Bravo vous avez trouve le nombre avant la limite d'iterations en " + time + "ms");
+            logger.log("fin");
         } else if(success == true && i == loopNumber){
-            System.out.println("Bravo vous avez trouve le nombre avant la limite d'iterations en " + time + "ms");
+            //System.out.println("Bravo vous avez trouve le nombre avant la limite d'iterations en " + time + "ms");
+            logger.log("Bravo vous avez trouve le nombre avant la limite d'iterations en " + time + "ms");
+            logger.log("fin");
         } else {
-            System.out.println("Desole mais vous n'avez pas trouve le nombre");
+            //System.out.println("Desole mais vous n'avez pas trouve le nombre");
+            logger.log("Desole mais vous n'avez pas trouve le nombre");
+            logger.log("fin");
         }
     }
 }
