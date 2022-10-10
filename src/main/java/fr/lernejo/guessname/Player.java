@@ -1,0 +1,11 @@
+package fr.lernejo.guessname;
+
+public interface Player {
+
+    long askNextGuess();
+
+    /**
+     * Called by {@link fr.lernejo.Simulation} to inform that the previous guess was lower or greater that the number to find.
+     */
+    void respond(boolean lowerOrGreater);
+}
