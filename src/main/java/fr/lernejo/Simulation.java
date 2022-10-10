@@ -5,6 +5,8 @@ import fr.lernejo.guessname.Player;
 import fr.lernejo.logger.Logger;
 import fr.lernejo.logger.LoggerFactory;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Simulation {
@@ -30,26 +32,39 @@ public class Simulation {
         //TODO implement me
         System.out.println("Entrez un nombre entre 1 et 100");
         long userNumberInput = player.askNextGuess();
-        boolean state;
+        System.out.println(userNumberInput);
 
         if (userNumberInput == numberToGuess){
             logger.log("Bravo");
             return true;
-        }
-
-        if (userNumberInput > numberToGuess){
-            logger.log("Petit");
-            return false;
         }else{
-            logger.log("Grand");
+            player.respond(userNumberInput > this.numberToGuess);
             return false;
         }
 
     }
 
-    public void loopUntilPlayerSucceed() {
+    public void loopUntilPlayerSucceed(long loopNumber) {
+        int i = 0;
+        boolean success = nextRound();
+        long startTime = System.currentTimeMillis();
         //TODO implement me
-        while (this.nextRound() != true){
+        while (success != true && i < loopNumber){
+            i++;
+            success = nextRound();
+        }
+        long endTime = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        SimpleDateFormat simpleDate = new SimpleDateFormat("mm:ss.SSS");
+        Date date = new Date(totalTime);
+        String time = simpleDate.format(date);
+
+        if (success == true && i < loopNumber){
+            System.out.println("Bravo vous avez trouve le nombre avant la limite d'iterations en " + time + "ms");
+        } else if(success == true && i == loopNumber){
+            System.out.println("Bravo vous avez trouve le nombre avant la limite d'iterations en " + time + "ms");
+        } else {
+            System.out.println("Desole mais vous n'avez pas trouve le nombre");
         }
     }
 }
